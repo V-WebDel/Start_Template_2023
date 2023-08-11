@@ -1,26 +1,23 @@
 .btn {
   display: block;
-  padding: 10px 30px;
-  font-weight: 700;
-  font-size: 18px;
-  color: $color-default-white;
-  background-color: $accent;
+  padding: 1rem 2rem;
+  font: var(--font-medium-bold);
+  color: var(--color-default);
+  background-color: var(--color-white);
   border: none;
   border-radius: 30px;
   transition: $slowdown;
   cursor: pointer;
   
   &:hover {
-    color: $color-default-white;
+    color: var(--color-white);
     text-decoration: none;
-    background-color: lighten($accent, 10%);
+    background-color: var(--color-default);
   }
 }
    
 h1, h2, h3, h4 {
   margin-top: 0;
-  font-weight: 700;
-  line-height: 1.2;
 }
 
 p {
@@ -29,9 +26,7 @@ p {
   
 .title-text {
   margin-bottom: 0;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
+  font: var(--font-heading-2);
   text-align: center;
 }
   

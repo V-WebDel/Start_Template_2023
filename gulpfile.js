@@ -18,7 +18,7 @@ global.app = {
 // Импорт задач 
 import { reset, resetBuild } from "./gulp/tasks/reset.js";
 import { pug2html, pug2htmlBuild } from "./gulp/tasks/html.js";
-import { scss, scssBuild, styles, stylesBuild } from "./gulp/tasks/scss.js";
+import { scss, scssBuild, styles, stylesBuild } from "./gulp/tasks/css.js";
 import { js, jsBuild, scripts, scriptsBuild } from "./gulp/tasks/js.js";
 import { images, webpp, imagesBuild, webppBuild } from "./gulp/tasks/images.js";
 import { fonts, fontsBuild } from "./gulp/tasks/fonts.js";
@@ -41,8 +41,8 @@ function watcher() {
 }
 
 // Основные задачи
-const mainTasks = gulp.parallel(fonts, svgSprite, pug2html, scss, styles, js, scripts, images, webpp, favicons, video);
-const buildTasks = gulp.parallel(fontsBuild, svgSpriteBuild, pug2htmlBuild, scssBuild, stylesBuild, jsBuild, scriptsBuild, imagesBuild, webppBuild, faviconsBuild, videoBuild);
+const mainTasks = gulp.parallel(fonts, pug2html, scss, styles, js, scripts, images, webpp, svgSprite, favicons, video);
+const buildTasks = gulp.parallel(fontsBuild, pug2htmlBuild, scssBuild, stylesBuild, jsBuild, scriptsBuild, imagesBuild, webppBuild, svgSpriteBuild, faviconsBuild, videoBuild);
 
 // Построение сценариев выполения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

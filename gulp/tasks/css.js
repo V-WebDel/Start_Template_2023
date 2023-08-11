@@ -8,6 +8,11 @@ import concat from "gulp-concat";
 
 const sass = gulpSass(mainSass)
 
+const listStyles = [
+  'node_modules/normalize.css/normalize.css',
+  'node_modules/swiper/swiper-bundle.min.css',
+];
+
 export const scss = () => {
   return app.gulp.src(app.path.src.scss, { sourcemaps: true })
     .pipe(app.plugins.plumber(
@@ -66,19 +71,13 @@ export const scssBuild = () => {
 }
 
 export const styles = () => {
-  return app.gulp.src([
-    'node_modules/normalize.css/normalize.css',
-    'node_modules/swiper/swiper-bundle.min.css',
-  ])
+  return app.gulp.src( listStyles )
   .pipe(concat('styles.min.css'))
   .pipe(app.gulp.dest(app.path.app.css))
 }
 
 export const stylesBuild = () => {
-  return app.gulp.src([
-    'node_modules/normalize.css/normalize.css',
-    'node_modules/swiper/swiper-bundle.min.css',
-  ])
+  return app.gulp.src( listStyles )
   .pipe(concat('styles.min.css'))
   .pipe(app.gulp.dest(app.path.build.css))
 }
