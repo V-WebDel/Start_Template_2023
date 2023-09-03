@@ -23,6 +23,7 @@ export const path = {
     scss: `${srcFolder}/scss/main.scss`,
     js: `${srcFolder}/js/main.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif}`,
+    svgsprite: `${srcFolder}/img/`,
     webp: `${appFolder}/img/webp/**/*.webp`,
     svg: `${srcFolder}/img/**/*.svg`,
     fonts: `${srcFolder}/fonts/*.*`,

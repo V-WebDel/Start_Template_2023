@@ -21,7 +21,7 @@ export const svgSprite = () => {
         }
       }
     }))
-    .pipe(app.gulp.dest(app.path.app.images))
+    .pipe(app.gulp.dest(app.path.src.svgsprite))
     .pipe(app.plugins.browsersync.stream()) // Триггер обновления страницы
 }
 
