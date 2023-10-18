@@ -1,0 +1,67 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+  font: var(--font-medium-bold);
+  color: var(--color-white);
+  text-align: center;
+  background: none;
+  background-color: var(--color-accent);
+  border: none;
+  transition: background-color $slowdown, color $slowdown;
+  cursor: pointer;
+  
+  &:hover, &:focus {
+    color: var(--color-accent);
+    text-decoration: none;
+    background-color: var(--color-white);
+  }
+
+  &:focus {
+    outline: var(--color-accent) solid 2px;
+  }
+
+  &--center {
+    margin: 0 auto;
+  }
+
+  &--right {
+    margin-left: auto;
+  }
+
+  &--left {
+    margin-right: auto;
+  }
+
+  &--w100 {
+    width: 100%;
+  }
+}
+   
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+  
+.title-text {
+  margin-bottom: 0;
+  font: var(--font-heading-2);
+  text-align: center;
+}
+  
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-up {
+  text-transform: uppercase;
+}
+  
+.text-nowrap {
+  white-space: nowrap;
+}

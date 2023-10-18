@@ -14,6 +14,8 @@ openMenu.addEventListener('click', function() {
   blockMenu.classList.add('show');
   headerBlock.setAttribute('aria-expanded', 'true');
 
+  closeMenu.focus();
+  
   cancelScroll(); // Отключение скролла
 });
 
@@ -21,6 +23,8 @@ openMenu.addEventListener('click', function() {
 closeMenu.addEventListener('click', function() {
   blockMenu.classList.remove('show');
   headerBlock.setAttribute('aria-expanded', 'false');
+
+  openMenu.focus();
 
   startScroll(); // Включение скролла
 });

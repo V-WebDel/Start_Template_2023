@@ -5,8 +5,8 @@ import concat from "gulp-concat";
 const listScripts = [
   'src/libs/svgxuse-master/svgxuse.min.js',
   'node_modules/swiper/swiper-bundle.min.js',
-  'node_modules/gsap/dist/gsap.min.js',
-  'node_modules/gsap/dist/ScrollTrigger.min.js',
+//  'node_modules/gsap/dist/gsap.min.js',
+//  'node_modules/gsap/dist/ScrollTrigger.min.js',
 ];
 
 export const js = () => {
@@ -53,6 +53,6 @@ export const scripts = () => {
 
 export const scriptsBuild = () => {
   return app.gulp.src( listScripts )
-  .pipe(concat('scripts.min.js'))
+//  .pipe(concat('scripts.min.js'))
   .pipe(app.gulp.dest(app.path.build.js))
 }

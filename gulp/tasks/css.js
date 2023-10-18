@@ -78,6 +78,6 @@ export const styles = () => {
 
 export const stylesBuild = () => {
   return app.gulp.src( listStyles )
-  .pipe(concat('styles.min.css'))
+//  .pipe(concat('styles.min.css'))
   .pipe(app.gulp.dest(app.path.build.css))
 }
