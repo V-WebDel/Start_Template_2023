@@ -17,6 +17,6 @@
 	<li>Запуск сборки gulp - команда <strong>gulp</strong></li>
 	<li>Все новые файлы добавляем в директорию: <strong>/src</strong> при запущеном сборщике</li>
 	<li>Изображения в формате .webp добавляем в директорию: <strong>/src/img/webp</strong></li>
-	<li>Шрифты добавляем в форматах <strong>.ttf</strong> и <strong>.eot</strong> в директорию: <strong>/src/fonts</strong></li>
+	<li>Шрифты добавляем в форматах <strong>.ttf</strong> в директорию: <strong>/src/fonts</strong></li>
 	<li>Сборка для публикации - команда <strong>gulp build</strong></li>
 </ol>
