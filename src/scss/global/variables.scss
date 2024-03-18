@@ -4,11 +4,6 @@ $color-default-white:             #ffffff;
 $color-transparent:               rgba(255, 255, 255, 0);
 
 
-// Typography
-$font-accent:   "Times New Roman", Times, serif;
-$font-default:  "Roboto", Arial, Helvetica, sans-serif;
-
-
 // Other
 $fastdown:      0.2s ease;
 $middledown:    0.3s ease;
@@ -27,6 +22,23 @@ $slowdown:      0.4s ease;
   --color-grey:         #848484;
   --color-grey-light:   #F4F6F6;
 
+
+  // Radius
+  --radius-nano:        0.25rem; 
+  --radius-small:       0.5rem;
+  --radius:             1rem;
+  --radius-medium:      1.5rem;
+  --radius-big:         2rem;
+  --radius-section:     2.5rem;
+  --radius-btn:         6rem;
+  --radius-full:        50%;
+
+
+  // Box-shadow
+  --box-shadow:          0 0 6px 0 rgba(0,0,0, 0.15);     
+  --box-shadow-big:      0 0 14px 0 rgba(0,0,0, 0.15);     
+  --box-shadow-card:     0 0 28px 0 rgba(0,0,0, 0.15);   
+  
 
   // Typography
   --font-accent: "RobotoCondensed", Arial, Helvetica, sans-serif;

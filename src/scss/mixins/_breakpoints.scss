@@ -12,19 +12,19 @@
 }
 
 @mixin laptop {
-  @media screen and (max-width: 62rem) {
+  @media screen and (max-width: 62.5rem) {
       @content;
   }
 }
 
 @mixin tablets {
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 50rem) {
       @content;
   }
 }
 
 @mixin phones {
-  @media screen and (max-width: 36rem) {
+  @media screen and (max-width: 37.5rem) {
       @content;
   }
 }

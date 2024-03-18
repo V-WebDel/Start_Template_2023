@@ -1,0 +1,6 @@
+/.git/
+/gulp/
+/app/
+/production/
+/node_modules/
+/src/libs/
