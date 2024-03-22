@@ -1,3 +1,4 @@
+/* Global wrapper */
 .wrapper {
   position: relative;
   display: flex; 
@@ -27,17 +28,16 @@
   }
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  clip: rect(0 0 0 0);
-}
 
-.scroll-lock {
-  position: fixed;
-  overflow-y: auto;
+/* Sections */
+.section {
+  margin-bottom: 4rem;
+
+  @include laptop {
+    margin-bottom: 3rem;
+  }
+
+  @include tablets {
+    margin-bottom: 2rem;
+  }
 }

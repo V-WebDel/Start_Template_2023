@@ -1,0 +1,389 @@
+.main-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @include lst;
+  margin: 0 auto;
+
+  > .menu-item {
+    position: relative;
+    display: block;
+
+    > a, > span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font: var(--font-big-semi);
+      color: var(--color-default);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    > a {
+      transition: color $middledown;
+
+      &:hover, &:focus {
+        color: var(--color-secondary);
+      }
+
+      &:focus {
+        border-radius: var(--radius-small);
+        outline: 2px solid var(--color-secondary);
+      }
+
+      &[href="#"] {
+        &:hover, &:focus {
+          color: var(--color-default);
+        }
+      }
+    }
+
+    &.current_page_item {
+      > a {
+        transition: color $middledown;
+
+        &:hover, &:focus {
+          color: var(--color-secondary);
+        }
+      }
+
+      .arrow {
+        svg {
+          fill: var(--color-secondary);
+        }
+      }
+    }
+
+    &:hover {
+      .arrow {
+        transform: rotate(180deg);
+      }
+
+      .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  @include laptop {
+    flex-direction: column;
+
+    margin: 0;
+
+    > .menu-item {
+      padding: 0.5rem 0;
+
+      > a, > span {
+        padding: 0.25rem 0;
+      }
+    }
+
+    &--footer {
+      margin-left: 0;
+      padding: 0;
+
+      > .menu-item {
+        margin-right: 0;
+        padding: 0.5rem 0;
+
+        > span {
+          color: var(--color-grey);
+        }
+  
+        > a {
+          color: var(--color-secondary);
+          
+          &:hover, &:focus {
+            color: var(--color-secondary);
+          }
+        }
+      }
+    }
+
+    .current_page_item {
+      > a, > span {
+        position: relative;
+        border-radius: 0;
+      }
+    }
+  }
+
+  @include tablets {
+    margin-bottom: 1rem;
+    
+    &--footer {
+      align-items: center;
+      
+      > .menu-item {
+        > a, > span {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include phones {
+    > .menu-item {
+      > a, > span {
+        font-size: 14px;
+      }
+    }
+
+    &--footer {
+      padding: 0;
+
+      > .menu-item {
+        margin-right: 1rem;
+        padding: 0.5rem 0;
+
+        > a, > span {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.menu-item-has-children {
+  &.active {
+    .arrow {
+      transform: rotate(180deg);
+    }
+
+    .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: scaleY(1);
+    }
+  }
+}
+
+.arrow {
+  position: relative;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.5rem;
+  padding: 0!important;
+  transition: transform $slowdown;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.75rem;
+    height: 0.5rem;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  visibility: hidden;
+  @include lst;
+  padding: 0.75rem 1rem;
+  opacity: 0;
+  background-color: var(--color-white);
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform $slowdown, opacity $slowdown;
+
+  &.hide {
+    display: none!important;
+  }
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+
+  .menu-item {
+    padding: 0;
+
+    > a, > span {
+      display: block;
+      margin-right: 0;
+      padding: 0.5rem 0.75rem;
+      white-space: nowrap;
+    }
+    
+    > a {
+      transition: color $middledown;
+      
+      &:hover, &:focus {
+        color: var(--color-secondary);
+      }
+
+      &:focus {
+        border-radius: var(--radius-small);
+        outline: 2px solid var(--color-secondary);
+      }
+    }
+  }
+
+  @include laptop {
+    position: static;
+    align-items: stretch;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    margin-left: 1rem;
+    padding: 0;
+    background: none;
+    border-top: none;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  @include lst;
+
+  > .menu-item {
+    margin-bottom: 1rem;
+
+    > a, > span {
+      padding: 0;
+      white-space: nowrap;
+      font: var(--font-medium);
+      color: var(--color-default);
+    }
+
+    > a {
+      &:hover, &:focus {
+        color: var(--color-secondary);
+      }
+    }
+  }
+
+  .current_page_item {
+    > a, > span {
+      position: relative;
+      color: var(--color-secondary);
+    }
+  }
+
+  @include tablets {
+    justify-content: flex-start;
+  }
+}
+
+.open-menu {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+
+  &__line {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-default);
+    border-radius: 1rem;
+    transition: opacity $fastdown;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      height: 2px;
+      width: 100%;
+      background-color: inherit;
+      border-radius: 1rem;
+      transform: translateX(-50%);
+    }
+
+    &::before {
+      top: -0.5rem;
+    }
+
+    &::after {
+      bottom: -0.5rem;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-secondary);
+  }
+}
+
+.close-menu {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid var(--color-secondary);
+  }
+
+  &__line {
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 2px;
+      width: 1.5rem;
+      background-color: var(--color-default);
+      border-radius: 1rem;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  @include phones {
+    top: 1rem;
+  }
+}

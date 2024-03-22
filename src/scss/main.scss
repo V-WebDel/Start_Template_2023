@@ -1,11 +1,12 @@
 // Global
 //---------------------------------
-@import "global/variables";
 @import "global/mixins/mixins";
+@import "global/variables";
 @import "global/fonts";
 
 @import "global/basic";
-@import "global/utils";
+@import "global/layouts";
+
 @import "global/container";
 @import 'global/elements';
   
@@ -14,6 +15,7 @@
 // Blocks
 //---------------------------------
 
+@import "blocks/menu";
 @import "blocks/header";
 
 @import "blocks/top";

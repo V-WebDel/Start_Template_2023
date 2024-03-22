@@ -1,2 +1,31 @@
 header.header
-  .container
+  .container.header__container
+    .header__logo
+      a(href="/").logo.header__logo--outer
+        img(src="./img/Logo.svg", alt="Logotype")
+
+    .header__inner
+
+      .header__menu
+        a(href="/").logo.header__logo--inner
+          img(src="./img/Logo.svg", alt="Logotype")
+        ul.main-menu
+          li.menu-item.menu-item-type-post_type.current_page_item
+            a(href="#pricing") Pricing
+          li.menu-item.menu-item-type-post_type.current_page_item
+            a(href="#steps") How It Works
+          li.menu-item.menu-item-type-post_type
+            a(href="#faq") FAQ
+            
+        .header__links
+          span(data-turbo="$login$").btn.btn--inverse.link-login Login
+          span(data-turbo="$reg$").btn.btn--secondary.link-tryit Try for FREE
+
+
+        button.header__close-menu.close-menu(type="button" aria-label="Close menu" tabindex="1")
+          span.close-menu__line
+          span.IH Close menu
+
+    button.header__open-menu.open-menu(type="button" aria-label="Open menu" tabindex)
+      span.open-menu__line
+      span.IH Open menu

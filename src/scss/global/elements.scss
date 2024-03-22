@@ -65,3 +65,18 @@ p {
 .text-nowrap {
   white-space: nowrap;
 }
+
+
+/* Logotype */
+.logo {
+  display: block;
+  flex: 0 1 30rem;
+
+  @include laptop {
+    flex: 0 1 20rem;
+  }
+
+  @include phones {
+    flex: 0 1 14rem;
+  }
+}

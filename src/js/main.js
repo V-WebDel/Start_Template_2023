@@ -1,56 +1,23 @@
-import { startScroll } from './modules/helpers/startScroll.js';
-import { cancelScroll } from './modules/helpers/cancelScroll.js';
-import { getTop } from './modules/helpers/getTop.js';
+import { smoothScrollingLinks } from './modules/smoothScrollingLinks.js';
+import { revealLinksOnAction } from './modules/revealLinksOnAction.js';
+import { revealFormsOnAction } from './modules/revealFormsOnAction.js';
+import { workItemsMenu } from './modules/workItemsMenu.js';
 
-let offset = 10;
-const headerBlock = document.querySelector('.header');
-const blockMenu = document.querySelector('.header__menu');
-const openMenu = document.querySelector('.open-menu');
-const closeMenu = document.querySelector('.close-menu');
+import './modules/headerScroll.js';
+import './modules/menu.js';
 
 
-/* Кнопки показать меню на мобильных */
-openMenu.addEventListener('click', function() {
-  blockMenu.classList.add('show');
-  headerBlock.setAttribute('aria-expanded', 'true');
+/* Плавная прокрутка при нажатии на анкорную ссылку */
+smoothScrollingLinks();
 
-  closeMenu.focus();
-  
-  cancelScroll(); // Отключение скролла
-});
+/* Замена SPAN на ссылку для внешних ссылок */
+revealLinksOnAction();
 
-/* Кнопки скрыть меню на мобильных */
-closeMenu.addEventListener('click', function() {
-  blockMenu.classList.remove('show');
-  headerBlock.setAttribute('aria-expanded', 'false');
+/* Замена action в FORM */
+revealFormsOnAction(); 
 
-  openMenu.focus();
-
-  startScroll(); // Включение скролла
-});
-
-
-/* Высота при прокрутке */
-window.addEventListener('scroll', () => {
-  document.documentElement.style.setProperty(
-    '--scroll-y',
-    `${window.scrollY}px`
-  );
-});
-
-
-/* Условия для элементов при прокрутке */
-window.addEventListener('scroll', function () {
-  if (getTop() > offset) {
-    if (headerBlock) {
-      headerBlock.classList.add('header--scroll');
-    }
-  } else {
-    if (headerBlock) {
-      if (!blockMenu.classList.contains('show')) headerBlock.classList.remove('header--scroll');
-    } 
-  }
-});
+/* Показать/скрыть подменю + Фокус на пункте меню */
+workItemsMenu();
 
 
 ///* Модальные окна */
