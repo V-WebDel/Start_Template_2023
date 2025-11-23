@@ -1,3 +1,5 @@
+/* global global */
+
 // Основной модуль
 import gulp from "gulp";
 
@@ -10,10 +12,10 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Передаем значения в глобальную переменную
 global.app = {
-    path: path,
-    gulp: gulp,
-    plugins: plugins,
-}
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
+};
 
 // Импорт задач 
 import { reset, resetBuild } from "./gulp/tasks/reset.js";
@@ -29,15 +31,15 @@ import { server } from "./gulp/tasks/server.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-    gulp.watch(path.watch.html, pug2html);
-    gulp.watch(path.watch.scss, scss);
-    gulp.watch(path.watch.js, js);
-    gulp.watch(path.watch.images, images);
-    gulp.watch(path.watch.images, webpp);
-    gulp.watch(path.watch.fonts, fonts);
-    gulp.watch(path.watch.svgicons, svgSprite);
-    gulp.watch(path.watch.favicons, favicons);
-    gulp.watch(path.watch.video, video);
+  gulp.watch(path.watch.html, pug2html);
+  gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.images, webpp);
+  gulp.watch(path.watch.fonts, fonts);
+  gulp.watch(path.watch.svgicons, svgSprite);
+  gulp.watch(path.watch.favicons, favicons);
+  gulp.watch(path.watch.video, video);
 }
 
 // Основные задачи
@@ -50,8 +52,8 @@ const build = gulp.series(resetBuild, buildTasks);
 
 
 // Выполнение сценария по умолчанию
-gulp.task('default', dev)
+gulp.task('default', dev);
 
 
 // Выполнение сценария в продакшен
-gulp.task('build', build)
+gulp.task('build', build);

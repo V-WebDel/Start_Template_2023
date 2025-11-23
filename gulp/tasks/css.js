@@ -29,13 +29,13 @@ export const scss = () => {
       overrideBrowserslist: ['last 3 versions'],
       cascade: true
     }))
-    .pipe(cleanCss({
-      level: {
-          1: {
-              specialComments: 0
-          }
-      }
-    }))
+    // .pipe(cleanCss({
+    //   level: {
+    //       1: {
+    //           specialComments: 0
+    //       }
+    //   }
+    // }))
     // .pipe(rename({
     //   extname: ".min.css" // Добавить префикс для назания файла
     // }))
@@ -62,9 +62,9 @@ export const scssBuild = () => {
     }))
     .pipe(cleanCss({
       level: {
-          1: {
-              specialComments: 0
-          }
+        1: {
+          specialComments: 0
+        }
       }
     }))
     .pipe(app.gulp.dest(app.path.build.css))

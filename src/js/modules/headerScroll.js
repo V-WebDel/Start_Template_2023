@@ -1,3 +1,7 @@
+import { getTop } from './helpers/getTop.js';
+import { startScroll } from './helpers/startScroll.js';
+import { cancelScroll } from './helpers/cancelScroll.js';
+
 let offset = 10;
 const headerBlock = document.querySelector('.header');
 const blockMenu = document.querySelector('.header__menu');
@@ -31,7 +35,6 @@ const headerBlockShow = () => {
     headerBlock.classList.remove('header--hide');
   } 
 };
-
 
 
 /* Кнопки показать меню на мобильных */
@@ -76,3 +79,31 @@ window.addEventListener('scroll', function () {
     } 
   }
 });
+
+
+window.addEventListener('scroll', function () {
+  const scrolled = getTop();
+  const scrollUp = scrolled - offset;
+
+  if (scrolled > 100) {
+    if (scrollUp > 0) {
+      headerBlockHide();
+      headerBlockScroll();
+    } else {
+      headerBlockShow();
+    }
+  }
+
+  if (scrolled > 10) {
+    headerBlockScroll();
+  } else {
+    headerBlockNoScroll();
+  }
+
+  offset = scrolled;
+});
+
+if (getTop() > 0) {
+  headerBlockScroll();
+  headerBlockShow();
+}

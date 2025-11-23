@@ -70,13 +70,9 @@ p {
 /* Logotype */
 .logo {
   display: block;
-  flex: 0 1 30rem;
+  width: 10rem;
 
-  @include laptop {
-    flex: 0 1 20rem;
-  }
-
-  @include phones {
-    flex: 0 1 14rem;
+  @include tablets {
+    width: 7.5rem;
   }
 }
