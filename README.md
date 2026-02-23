@@ -1,6 +1,5 @@
 <h1>Проект NAME</h1>
 
-
 <p>В комплекте шаблона включено:</p> 
 <ul>
   <li>Шаблонизатор PUG</li>
@@ -20,3 +19,5 @@
 	<li>Шрифты добавляем в форматах <strong>.ttf</strong> в директорию: <strong>/src/fonts</strong></li>
 	<li>Сборка для публикации - команда <strong>gulp build</strong></li>
 </ol>
+
+<p>Автор: <a href="https://webdel.ru/" target="_blank">KRYZHNYI VIKTOR</a></p>
